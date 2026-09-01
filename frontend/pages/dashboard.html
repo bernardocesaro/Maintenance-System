@@ -24,7 +24,7 @@
                 <main class="col-md-9 col-lg-10 p-4">
                     <form class="row g-3 mb-4">
                         <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="Pesquisar Equipamento">
+                            <input id="searchInput" type="text" class="form-control" placeholder="Pesquisar Equipamento">
                         </div>
                         <div class="col-md-4">
                             <button class="btn btn-primary w-100">Pesquisar</button>
@@ -47,6 +47,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h6>Em Manutenção</h6>
+                                    <h2 id="manutenanceEquipmentsTotal">15</h2>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <table class="table table-striped table-hover align-middle">
@@ -55,23 +63,43 @@
                                     <th>Equipamento</th>
                                     <th>Local</th>
                                     <th>Status</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="equipmentsTable">
                                 <tr>
                                     <td>Empacotadora</td>
                                     <td>Setor Peru A1</td>
                                     <td>Ativos</td>
+                                    <td>Nenhuma Ação Disponível</td>
                                 </tr>
                                 <tr>
                                     <td>Empacotadora Bandeja</td>
                                     <td>Setor Peru A1</td>
                                     <td>Manutenção</td>
+                                    <td>Nenhuma Ação Disponível</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <div class="row">
+                        <button id="btnNewEquipment" class="btn btn-primary">Novo Equipamento</button>
+                    </div>
                 </main>
+                <div id="equipmentModal" class="modal fade" tabindex="-1" aria-hidden="false">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Novo Equipamento</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" id="equipmentName" class="form-control" placeholder="Nome do Equipamento">
+                                <button type="button" id="btnSaveEquipment" class="btn btn-success">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
